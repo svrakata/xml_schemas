@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/nlmqualifierrecordset_20190101" elementFormDefault="qualified" targetNamespace="http://tempuri.org/nlmqualifierrecordset_20190101" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="QualifierRecordSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="QualifierRecord" />
+      </xs:sequence>
+      <xs:attribute name="LanguageCode" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="cze" />
+            <xs:enumeration value="dut" />
+            <xs:enumeration value="eng" />
+            <xs:enumeration value="fin" />
+            <xs:enumeration value="fre" />
+            <xs:enumeration value="ger" />
+            <xs:enumeration value="ita" />
+            <xs:enumeration value="jpn" />
+            <xs:enumeration value="lav" />
+            <xs:enumeration value="por" />
+            <xs:enumeration value="scr" />
+            <xs:enumeration value="slv" />
+            <xs:enumeration value="spa" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QualifierRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="DateCreated" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="DateRevised" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="DateEstablished" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="Annotation" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="HistoryNote" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="OnlineNote" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="TreeNumberList" />
+        <xs:element ref="ConceptList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

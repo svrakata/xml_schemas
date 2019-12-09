@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/nlmsupplementalrecordset_20190101" elementFormDefault="qualified" targetNamespace="http://tempuri.org/nlmsupplementalrecordset_20190101" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SupplementalRecordSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="SupplementalRecord" />
+      </xs:sequence>
+      <xs:attribute name="LanguageCode" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="cze" />
+            <xs:enumeration value="dut" />
+            <xs:enumeration value="eng" />
+            <xs:enumeration value="fin" />
+            <xs:enumeration value="fre" />
+            <xs:enumeration value="ger" />
+            <xs:enumeration value="ita" />
+            <xs:enumeration value="jpn" />
+            <xs:enumeration value="lav" />
+            <xs:enumeration value="por" />
+            <xs:enumeration value="scr" />
+            <xs:enumeration value="slv" />
+            <xs:enumeration value="spa" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplementalRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element ref="SupplementalRecordUI" />
+          <xs:element ref="SupplementalRecordName" />
+        </xs:sequence>
+        <xs:element ref="DateCreated" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="DateRevised" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="Note" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="Frequency" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="PreviousIndexingList" />
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="HeadingMappedToList" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="IndexingInformationList" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="PharmacologicalActionList" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="SourceList" />
+        <xs:element ref="ConceptList" />
+      </xs:sequence>
+      <xs:attribute default="1" name="SCRClass">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+            <xs:enumeration value="3" />
+            <xs:enumeration value="4" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Note" type="xs:string" />
+  <xs:element name="SourceList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="Source" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Source" type="xs:string" />
+  <xs:element name="Frequency" type="xs:string" />
+  <xs:element name="HeadingMappedToList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="HeadingMappedTo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HeadingMappedTo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="DescriptorReferredTo" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="QualifierReferredTo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IndexingInformationList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="IndexingInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IndexingInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="DescriptorReferredTo" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="QualifierReferredTo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplementalRecordUI" type="xs:string" />
+  <xs:element name="SupplementalRecordName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="String" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
